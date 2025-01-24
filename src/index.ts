@@ -1,6 +1,7 @@
 import express from "express";
 import emailRoutes from "./routes/email";
 import dotenv from "dotenv";
+import cors from "cors";
 dotenv.config();
 
 const app = express();
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Routes
 app.use("/api/email", emailRoutes);
