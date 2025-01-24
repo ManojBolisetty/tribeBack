@@ -24,5 +24,10 @@ router.post("/send_email", async (req: any, res: any) => {
     res.status(500).json(result);
   }
 });
+router.get("/", (req: Request, res: Response) => {
+  res.status(200).json({
+    message: "Welcome to the Email API!",
+  });
+});
 
 export default router;
